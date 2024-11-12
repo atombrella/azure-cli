@@ -19,10 +19,7 @@ from ._field_type import AAZSimpleType, AAZObjectType, AAZBaseDictType, AAZListT
 from ._field_value import AAZList, AAZObject, AAZBaseDictValue
 from .exceptions import AAZInvalidValueError
 
-try:
-    from urllib import quote  # type: ignore
-except ImportError:
-    from urllib.parse import quote  # type: ignore
+from urllib.parse import quote  # type: ignore
 
 
 class AAZOperation:
