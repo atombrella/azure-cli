@@ -534,7 +534,7 @@ class AKSManagedClusterContext(BaseAKSContext):
     def _get_location(self, read_only: bool = False) -> Union[str, None]:
         """Internal function to dynamically obtain the value of location according to the context.
 
-        When location is not assigned, dynamic completion will be triggerd. Function "get_rg_location" will be called
+        When location is not assigned, dynamic completion will be triggered. Function 'get_rg_location' will be called
         to get the location of the provided resource group, which internally used ResourceManagementClient to send
         the request.
 
@@ -570,7 +570,7 @@ class AKSManagedClusterContext(BaseAKSContext):
     def get_location(self) -> Union[str, None]:
         """Dynamically obtain the value of location according to the context.
 
-        When location is not assigned, dynamic completion will be triggerd. Function "get_rg_location" will be called
+        When location is not assigned, dynamic completion will be triggered. Function 'get_rg_location' will be called
         to get the location of the provided resource group, which internally used ResourceManagementClient to send
         the request.
 

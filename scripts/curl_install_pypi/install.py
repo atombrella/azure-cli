@@ -333,7 +333,7 @@ def _get_linux_distro():
     try:
         with open('/etc/os-release') as lines:
             tokens = [line.strip() for line in lines]
-    except Exception as e:
+    except Exception:
         return None, None
 
     release_info = {}

@@ -5,7 +5,6 @@
 
 import base64
 from collections import Counter
-import sys
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 from azure.cli.core._profile import Profile
@@ -107,10 +106,7 @@ class BotJsonFormatter:  # pylint:disable=too-few-public-methods
         """
         services = bot_file_data['services']
 
-        if sys.version_info.major >= 3:
-            decrypt = BotJsonFormatter.__decrypt_py3
-        else:
-            decrypt = BotJsonFormatter.__decrypt_py2
+        decrypt = BotJsonFormatter.__decrypt_py3
 
         if password_only:
             # Get all endpoints that have potentially valid appPassword values
