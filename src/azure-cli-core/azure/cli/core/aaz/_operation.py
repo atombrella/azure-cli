@@ -10,7 +10,7 @@ import json
 from azure.core.exceptions import ClientAuthenticationError, ResourceExistsError, ResourceNotFoundError, \
     HttpResponseError
 from azure.cli.core.azclierror import InvalidArgumentValueError
-from urllib.parse import parse_qs, urljoin, urlparse
+from urllib.parse import parse_qs, urljoin, urlparse, quote
 
 from ._arg_browser import AAZArgBrowser
 from ._base import AAZUndefined, AAZBaseValue, AAZBaseType, has_value
@@ -18,11 +18,6 @@ from ._content_builder import AAZContentBuilder
 from ._field_type import AAZSimpleType, AAZObjectType, AAZBaseDictType, AAZListType
 from ._field_value import AAZList, AAZObject, AAZBaseDictValue
 from .exceptions import AAZInvalidValueError
-
-try:
-    from urllib import quote  # type: ignore
-except ImportError:
-    from urllib.parse import quote  # type: ignore
 
 
 class AAZOperation:
